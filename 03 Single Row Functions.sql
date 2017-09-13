@@ -1,6 +1,8 @@
 
 
-------------- 011 Single Row Functions SRF  Using The Dual Table -------------
+-------------------------------------------------------------------------------
+------------- 011 Single Row Functions SRF  Using The Dual Table --------------
+-------------------------------------------------------------------------------
 
 -- SQL functions, single row functions (SRF), Dual Table
 -- function is a predefined program that performs some tasks
@@ -40,7 +42,9 @@ as "function call" from emp where deptno = 20;
 
 
 
+-------------------------------------------------------------------------------
 ------------ 012 Using Functions in WHERE And Character Based SRFs ------------
+-------------------------------------------------------------------------------
 
 select *
 from emp
@@ -76,8 +80,9 @@ select rtrim('ooohelloooo', 'o') from dual;
 
 
 
-
+-------------------------------------------------------------------------------
 --------------------- 013 Numeric and Date Data type SRFs ---------------------
+-------------------------------------------------------------------------------
 
 select round(107.088, 2) from dual;
 -- 107.09
@@ -143,7 +148,9 @@ where trunc(hiredate, 'year') = '01/01/1982';
 
 
 
--------------------- 014 Conversion SRFs  Date Formatting --------------------
+-------------------------------------------------------------------------------
+-------------------- 014 Conversion SRFs  Date Formatting ---------------------
+-------------------------------------------------------------------------------
 
 select to_char(sysdate, 'dd-mm-yyyy') from dual;
 -- 12-09-2017
@@ -165,7 +172,12 @@ select to_date('2012-08-27', 'yyyy-mm-dd') from dual;
 select add_months(to_date('2012-08-27', 'yyyy-mm-dd'), 2) from dual;
 select to_date('12 of June, 2012', 'dd "of" Month, yyyy') from dual;
 
----------------- 015 Concluding SRFs NULL NULLIF Functions  ----------------
+
+
+
+-------------------------------------------------------------------------------
+----------------- 015 Concluding SRFs NULL NULLIF Functions  ------------------
+-------------------------------------------------------------------------------
 
 -- to_char function has 
 -- converted comm column with numbers to column with strings

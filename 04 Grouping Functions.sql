@@ -1,6 +1,7 @@
 
-------------- 016 Grouping Functions MIN MAX AVG COUNT etc -------------
-
+-------------------------------------------------------------------------------
+---------------- 016 Grouping Functions MIN MAX AVG COUNT etc -----------------
+-------------------------------------------------------------------------------
 
 -- Grouping function get many rows and return one row. Many inputs, one output.
 -- Single row function instead get 4 rows and return 4 results
@@ -62,7 +63,12 @@ select avg(sal)
 from emp
 where job = 'SALESMAN'
 
---------------------- 017 GROUP BY Clause  HAVING Clause ---------------------
+
+
+
+-------------------------------------------------------------------------------
+--------------------- 017 GROUP BY Clause  HAVING Clause ----------------------
+-------------------------------------------------------------------------------
 
 -- grouped by keyword, by something
 
@@ -102,7 +108,7 @@ HAVING count(*) = 2
 
 
 -- ############################################################################
--- return those department numbers, that have more than 3 employes
+-- return those department numbers, that have more than 3 employees
 -- ############################################################################
 
 select deptno
@@ -115,7 +121,12 @@ from emp
 group by deptno
 HAVING count(ename) >= 4
 
------------------ 018 More Practice With The GROUP BY Clause -----------------
+
+
+
+-------------------------------------------------------------------------------
+----------------- 018 More Practice With The GROUP BY Clause ------------------
+-------------------------------------------------------------------------------
 
 select job, deptno, count(*) as emps_by_dept
 from emp

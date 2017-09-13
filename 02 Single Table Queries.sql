@@ -3,7 +3,9 @@
 
 
 
+-------------------------------------------------------------------------------
 ----------------- 004 Retrieving Data Using the SELECT Clause -----------------
+-------------------------------------------------------------------------------
 
 select * from emp;
 
@@ -23,7 +25,9 @@ select distinct job from emp;
 
 
 
+-------------------------------------------------------------------------------
 -------------------- 005 Using the WHERE Clause in a Query --------------------
+-------------------------------------------------------------------------------
 
 select * from emp where job = 'MANAGER';
 
@@ -47,7 +51,9 @@ select * from emp where job = 'SALESMAN' and sal = 1600 and comm = '300';
 
 
 
+-------------------------------------------------------------------------------
 ------------------- 006 Using Operators in the WHERE Clause -------------------
+-------------------------------------------------------------------------------
 
 select * from emp where job = 'SALESMAN'
 
@@ -73,7 +79,9 @@ and deptno = 20;
 
 
 
+-------------------------------------------------------------------------------
 ----------------- 007 Combining WHERE AND  OR with Operators -----------------
+-------------------------------------------------------------------------------
 
 select * from emp where job = 'CLERK' or job = 'SALESMAN';
 
@@ -100,7 +108,10 @@ and job != 'SALESMAN';
 
 
 
-------------- 008 Query Filtering Continued BETWEEN IN and NULL ------------- 
+-------------------------------------------------------------------------------
+-------------- 008 Query Filtering Continued BETWEEN IN and NULL --------------
+-------------------------------------------------------------------------------
+
 select * from emp;
 select * from dept;
 
@@ -159,7 +170,9 @@ and sal between 1100 and 5000;
 
 
 
+-------------------------------------------------------------------------------
 ------------- 009 Query Filtering Conditions  Operator Precedence -------------
+-------------------------------------------------------------------------------
 
 --! <> like != and could exclude value also
 select * from emp 
@@ -205,7 +218,9 @@ where job LIKE '%NAGER';
 
 
 
-------------- 010 Ordering Concatenating  Aliasing Query Results -------------
+-------------------------------------------------------------------------------
+------------- 010 Ordering Concatenating  Aliasing Query Results --------------
+-------------------------------------------------------------------------------
 
 -- Alias is like another nickname to particular attribute
 -- useful for reports for someone unfamiliar with ur columns names
