@@ -191,7 +191,10 @@ and (comm = 300 or comm > 1000);
 
 
 -- use LIKE it's don't match exactly, it's like a pattern
+-- LIKE condition allows wildcards to be used
 -- % sign is 'wild card' it can be replaced by any character
+-- _ underscore can be replaced by any single character
+
 select * from emp 
 where job LIKE 'S%';
 
