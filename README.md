@@ -30,5 +30,5 @@
 ![right join](https://www.techonthenet.com/sql/images/right_outer_join.gif "return all records from shaded area")
 
 <h2>06 Creating Altering and Updating Tables Using SQL</h2>
-<p></p>
-<code></code>
+<p> Creating Table, Primary Key Column, data types, Inserting data, Auto/Implied Commit, Inserting many data with one move, number types length and precision, Foreign Key, primary key,  </p>
+<code> create table, number not null, varchar, insert into values, insert all into values, number(length, decimals), constraint column_name primary key(column_name), </code>
