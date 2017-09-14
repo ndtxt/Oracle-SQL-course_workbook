@@ -24,5 +24,11 @@
 
 <h2>05 Multi-Table Queries and Joins</h2>
 
-<p>SELECT within SELECT, Nested queries, subqueries, </p>
+<p>SELECT within SELECT, Nested queries, subqueries, tables aliases, Join tables, Multi-Table queries and joins, exists condition, correlated subquery  </p>
+<code> table_a.column_c = table_b.column_c, table_name alias_codename, inner join, on, right join, left join, left outer join, (+), full outer join, tablename.*, where exists, Correlated Subquery </code>
+
+![right join](https://www.techonthenet.com/sql/images/right_outer_join.gif "return all records from shaded area")
+
+<h2>06 Creating Altering and Updating Tables Using SQL</h2>
+<p></p>
 <code></code>
