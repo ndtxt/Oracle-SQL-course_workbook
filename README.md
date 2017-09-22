@@ -1,6 +1,6 @@
 <br>
-<center>Workbook: summary, exercises and solutions.</center>
 
+<h1>Workbook summary, exercises and solutions.</h1>
 ----------
 
 <h2>02 Single Table Queries</h2>
@@ -9,7 +9,6 @@
 
 <code>select, where, =, and, <=, >=, !=, or, <>, not, between 'data' and, in('like ='), is null, , like ('tex%'), as "()*($", order by, || </code>
 
-----------
 <h2>03 Single Row Functions</h2>
 
 <p>SQL functions, single row functions (SRF), Dual Table, string, numeric and date data type of SRFs, Conversion Functions, format elements, NULL NULLIF Functions</p>
@@ -30,5 +29,5 @@
 ![right join](https://www.techonthenet.com/sql/images/right_outer_join.gif "return all records from shaded area")
 
 <h2>06 Creating Altering and Updating Tables Using SQL</h2>
-<p> Creating Table, Primary Key Column, data types, Inserting data, Auto/Implied Commit, Inserting many data with one move, number types length and precision, Foreign Key, primary key,  </p>
-<code> create table, number not null, varchar, insert into values, insert all into values, number(length, decimals), constraint column_name primary key(column_name), </code>
+<p> Creating Table, Primary Key Column, data types, Inserting data, Auto/Implied Commit, Inserting many data with one move, number types length and precision, Foreign Key, primary key, altering, deleting, renaming columns, deleting tables, Foreign Key Constraint, constraints: check, primary, foreign, truncating table, entire deleting table, indexes, unique indexes, rebuild compute statistics, rowid pseudo column, </p>
+<code> create table, number not null, varchar, insert into values, insert all into values, number(length, decimals), constraint column_name primary key(column_name), describe table_name, alter table table_name modify column_name, delete from table_name where id = id_number, alter table rename column name1 TO name2, create table as select from, alter table add column_name, update table_name set column_name = value where, drop constraint, truncate table, drop table, create index on, create unique index on, drop index, create index on compute statistics, alter index rebuild compute statistics, </code>
