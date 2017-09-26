@@ -1,6 +1,7 @@
 <br>
 
-<h1>Workbook summary, exercises and solutions.</h1>
+<h1>Workbook: 
+<br>summary, exercises and solutions.</h1>
 ----------
 
 <h2>02 Single Table Queries</h2>

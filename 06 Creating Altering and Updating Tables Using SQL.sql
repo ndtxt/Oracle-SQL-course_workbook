@@ -480,4 +480,3 @@ INNER JOIN
 ON e1.store_id = e2.store_id
 WHERE ename !='FORD'
 -- ORA-00955: name is already used by an existing object
-
