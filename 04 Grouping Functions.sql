@@ -70,6 +70,9 @@ where job = 'SALESMAN'
 --------------------- 017 GROUP BY Clause  HAVING Clause ----------------------
 -------------------------------------------------------------------------------
 
+-- The HAVING clause is like the WHERE clause,
+-- except it acts on the grouped data.
+
 -- grouped by keyword, by something
 
 select avg(sal), job

@@ -241,7 +241,7 @@ DROP TABLE dept
 TRUNCATE TABLE emp
 
 DROP TABLE emp
--- table is gone frome our system
+-- table is gone from our system
 
 -------------------------------------------------------------------------------
 ---------------------- 029 Working With Database Indexes ----------------------
@@ -249,7 +249,7 @@ DROP TABLE emp
 
 -- INDEX is a data structure used by database to search for things much faster
 -- without fell defined indexes big tables become slow down
--- columns that queried often shold be Index
+-- columns that queried often should be Index
 -- creating Indexes spend some space
 select * from employees
 
@@ -334,3 +334,150 @@ ADD CONSTRAINT store_id_pk PRIMARY KEY (store_id)
 CREATE UNIQUE INDEX store_id_idx
 ON stores(store_id)
 COMPUTE STATISTICS
+
+
+SELECT * FROM all_tables
+WHERE table_name = 'EMPLOYEES'
+AND rownum < 10
+
+
+SELECT * FROM all_tab_columns
+WHERE table_name = 'EMPLOYEES'
+
+SELECT * FROM all_objects
+WHERE rownum < 50
+
+SELECT * FROM all_objects
+WHERE object_type = 'INDEX'
+AND object_name = 'EMP_NAME_IDX'
+
+-- same with lower function
+SELECT * FROM all_objects
+WHERE object_type = 'INDEX'
+AND lower(object_name) = 'emp_name_idx'
+
+SELECT * FROM user_tab_columns
+
+CREATE PUBLIC SYNONYM emp_table
+FOR employees
+-- insufficient privileges
+
+CREATE SYNONYM emp_table
+FOR employees
+-- Synonym created.
+
+SELECT * FROM emp_table
+
+SELECT rownum, enum, sal FROM emp_table
+
+
+
+
+-------------------------------------------------------------------------------
+------------ 031 Views and Other Objects and Commands Newly Added -------------
+-------------------------------------------------------------------------------
+
+-- VIEW object is convenient when you are handle with complex query
+-- VIEW like a named query
+
+CREATE VIEW managers_v AS
+SELECT * FROM employees
+WHERE job = 'MANAGER'
+
+SELECT * FROM managers_v
+
+SELECT * FROM user_objects
+WHERE object_type = 'VIEW'
+
+SELECT * FROM all_objects
+WHERE OWNER = 'TIHOVS_DATABASE'
+AND object_type = 'TABLE'
+
+SELECT * FROM all_objects
+WHERE object_type = 'VIEW'
+AND rownum < 10
+
+-- information about particular database
+SELECT * FROM SYS.V_$VerSioN
+
+DROP VIEW managers_v
+
+
+-- ############################################################################
+-- return highest paid employees from stores
+-- ############################################################################
+
+CREATE VIEW super_employees AS
+SELECT * FROM employees e1
+INNER JOIN
+  (SELECT store_id, max(sal) sal
+  FROM employees
+  GROUP BY store_id) e2
+ON e1.store_id = e2.store_id
+AND e1.sal = e2.sal
+WHERE ename != 'FORD'
+-- ORA-00957: duplicate column name
+-- because of *
+
+CREATE VIEW super_employees AS
+SELECT e1.* FROM employees e1
+INNER JOIN
+  (SELECT store_id, max(sal) sal
+  FROM employees
+  GROUP BY store_id) e2
+ON e1.store_id = e2.store_id
+AND e1.sal = e2.sal
+WHERE ename != 'FORD'
+
+-- UNION is used to combine, use two things together
+-- The UNION operator selects only distinct values by default.
+-- To allow duplicate values, use UNION ALL
+-- The UNION operator is used to combine the result-set
+-- of two or more SELECT statements.
+-- Each SELECT statement within UNION must have the same number of columns
+-- The columns must also have similar data types
+-- The columns in each SELECT statement must also be in the same order
+
+
+CREATE VIEW super_employees AS
+SELECT e1.* FROM employees e1
+INNER JOIN
+  (SELECT store_id, max(sal) sal
+  FROM employees
+  GROUP BY store_id) e2
+ON e1.store_id = e2.store_id
+AND e1.sal = e2.sal
+WHERE ename != 'FORD'
+UNION
+SELECT * FROM employees
+
+SELECT * FROM employees
+UNION
+SELECT * FROM super_employees
+
+SELECT ename, job FROM employees
+UNION
+SELECT ename, job FROM super_employees
+ORDER BY job
+
+-- to get duplicates 
+SELECT * FROM employees
+UNION ALL
+SELECT * FROM super_employees
+
+-- MINUS
+SELECT * FROM super_employees
+MINUS -- MINUS records below from table mentioned above
+SELECT * FROM employees WHERE job = 'SALESMAN'
+
+-- how to change VIEW
+CREATE OR REPLACE VIEW super_employees AS
+SELECT e1.* FROM employees e1
+INNER JOIN
+  (SELECT store_id, max(sal) sal
+  FROM employees
+  GROUP BY store_id) e2
+ON e1.store_id = e2.store_id
+WHERE ename !='FORD'
+-- ORA-00955: name is already used by an existing object
+
